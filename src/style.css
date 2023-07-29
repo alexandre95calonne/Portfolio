@@ -27,3 +27,31 @@ canvas {
 .yes {
     font-family: 'Caveat';
 }
+
+#mobileMessage {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    font-style: none;
+    font-weight: bold;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    #root, canvas {
+        display: none;
+    }
+
+    #mobileMessage {
+        display: block;
+    }
+}

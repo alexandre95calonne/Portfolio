@@ -10,14 +10,21 @@ function ResponsiveCanvas() {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {
-        setCameraPosition([-5, 3.4, 8]);
+        // Zoom out more for mobile devices
+        setCameraPosition([-5, 3.4, 8]); // Increase these values to zoom out more
       } else {
+        // Default position for larger screens
         setCameraPosition([-2.5, 1.7, 4]);
       }
     }
+
+    // Set initial position
     handleResize();
+
+    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
+    // Clean up
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
